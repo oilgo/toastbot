@@ -4,6 +4,6 @@ venv/
 
 instance/
 
-logs/
+*.log
 
 __pycache__/
