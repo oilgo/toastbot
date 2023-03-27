@@ -1,22 +1,24 @@
 from utils import (
-    Base, 
-    engine, 
+    Base,
+    engine,
     PageParser,
     add_stage_name,
     db_notempty
-    
+
 )
 from telegram_bot import bot
 from core import USER_STAGES, PARSE_URLS
 import logging
+
 
 def main():
     # Создание базы данных
     Base.metadata.create_all(engine)
 
     # Создание лога
-    logging.basicConfig(level=logging.INFO, filename="./logs/app_log.log",filemode="w",
-                    format="%(asctime)s %(levelname)s %(message)s")
+    logging.basicConfig(filename="./logs/app_log.log", filemode="w",
+                        format="%(asctime)s %(levelname)s %(message)s")
+    logging.captureWarnings(True)
 
     # Если в базе нет записей
     if not db_notempty():

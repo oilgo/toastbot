@@ -5,3 +5,5 @@ venv/
 instance/
 
 logs/
+
+__pycache__/
